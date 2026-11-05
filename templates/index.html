@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness Buddy — AI Health Coach</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="15" stroke="#4ade80" stroke-width="2"/>
+          <path d="M8 16 Q10 10 16 10 Q22 10 24 16 Q22 22 16 22 Q10 22 8 16Z" fill="#4ade80" opacity="0.2"/>
+          <path d="M11 16 L14 13 L17 17 L20 11" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">Fitness Buddy</span>
+      </div>
+      <p class="logo-sub">AI Health &amp; Fitness Coach</p>
+    </div>
+
+    <div class="quick-section">
+      <p class="section-label">Quick Start</p>
+      <div id="suggestions-list" class="suggestion-chips"></div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="powered-badge">
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="4" fill="#0f62fe"/>
+          <text x="4" y="22" font-size="14" font-weight="bold" fill="white" font-family="sans-serif">ibm</text>
+        </svg>
+        <span>Powered by IBM Granite</span>
+      </div>
+      <p class="disclaimer">Not a substitute for medical advice.</p>
+    </div>
+  </aside>
+
+  <!-- ── Main Chat ── -->
+  <main class="chat-area">
+
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="header-left">
+        <div class="status-dot" id="status-dot"></div>
+        <div>
+          <h1>Fitness Buddy</h1>
+          <p id="status-text">Connecting…</p>
+        </div>
+      </div>
+      <button class="btn-icon" id="clear-btn" title="Clear chat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/>
+          <path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Messages -->
+    <div class="messages" id="messages">
+      <div class="welcome-card">
+        <div class="welcome-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" stroke="#4ade80" stroke-width="2" fill="#4ade8010"/>
+            <path d="M14 24 Q17 14 24 14 Q31 14 34 24 Q31 34 24 34 Q17 34 14 24Z" fill="#4ade80" opacity="0.15"/>
+            <path d="M17 24 L21 19 L25 25 L29 16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>Welcome to Fitness Buddy!</h2>
+        <p>I'm your personal AI health and fitness coach, powered by <strong>IBM Granite</strong>. I can help you with:</p>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <span class="feature-icon">🏋️</span>
+            <span>Home Workouts</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🥗</span>
+            <span>Nutrition Tips</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">💪</span>
+            <span>Motivation</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📅</span>
+            <span>Habit Building</span>
+          </div>
+        </div>
+        <p class="welcome-cta">Pick a suggestion from the sidebar or type your question below!</p>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="input-area">
+      <div class="input-wrapper">
+        <textarea
+          id="user-input"
+          placeholder="Ask me anything about fitness, nutrition, or motivation…"
+          rows="1"
+          maxlength="1000"
+        ></textarea>
+        <button id="send-btn" class="send-btn" title="Send">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+      <p class="char-count" id="char-count">0 / 1000</p>
+    </div>
+
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
