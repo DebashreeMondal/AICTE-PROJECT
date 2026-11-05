@@ -1,0 +1,47 @@
+{
+  "name": "Fitness Buddy",
+  "description": "AI-powered health and fitness coach using IBM Granite (watsonx.ai) via a Flask REST API and browser chat UI.",
+  "keywords": ["python", "flask", "ibm", "granite", "watsonx", "ai", "fitness", "health"],
+  "website": "https://github.com/DebashreeMondal/AICTE-PROJECT",
+  "repository": "https://github.com/DebashreeMondal/AICTE-PROJECT",
+  "logo": "https://avatars.githubusercontent.com/u/ibm",
+  "success_url": "/",
+  "scripts": {},
+  "env": {
+    "IBM_API_KEY": {
+      "description": "IBM Cloud API key for authenticating with IBM watsonx.ai. Get it from https://cloud.ibm.com/iam/apikeys",
+      "required": true
+    },
+    "IBM_PROJECT_ID": {
+      "description": "IBM watsonx.ai Project ID. Found under your project's Manage tab at https://dataplatform.cloud.ibm.com/",
+      "required": true
+    },
+    "IBM_WATSONX_URL": {
+      "description": "IBM watsonx.ai service URL for your region (e.g. https://us-south.ml.cloud.ibm.com)",
+      "value": "https://us-south.ml.cloud.ibm.com",
+      "required": true
+    },
+    "IBM_MODEL_ID": {
+      "description": "IBM Granite model ID to use for AI responses.",
+      "value": "ibm/granite-4-h-small",
+      "required": true
+    },
+    "FLASK_SECRET_KEY": {
+      "description": "Secret key for Flask session security. Use a long random string in production.",
+      "generator": "secret",
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "stack": "heroku-22"
+}
